@@ -44,6 +44,11 @@ public class Frontend {
     private JButton button1;
     private JTextField textField1;
     private JButton button2;
+    private JLabel TimeDifferences;
+    private JPanel Container8;
+    private JLabel Time1;
+    private JLabel DigitalClock1;
+    private JLabel DigitalClock;
 
     public Frontend() {
         button1.addActionListener(new ActionListener() {
@@ -202,9 +207,9 @@ public class Frontend {
                     double convert = Double.parseDouble(ConversionRate.getText());
                     double userInput = Double.parseDouble(textField1.getText());
                     //Converted1 is the first value converted to the second country
-                    double converted1 = (convert * userInput);
+                    double converted1 = (convert*userInput);
                     //Converted rounds the value to  decimal places
-                    double converted = Math.round(converted1 * 100) / 100.00;
+                    double converted = Math.round(converted1*100)/100.00;
                     currency1.setText(converted + "");
                 }catch(Exception error){
                     JOptionPane.showMessageDialog(null, "Input currency!");
@@ -240,13 +245,13 @@ public class Frontend {
             formatter.setTimeZone(TimeZone.getTimeZone(timeOne));
 
             DateFormat formatter1 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss z");
-            formatter.setTimeZone(TimeZone.getTimeZone(timeTwo));
+            formatter1.setTimeZone(TimeZone.getTimeZone(timeTwo));
 
             String TimeOutput1 = formatter.format(calendar.getTime());
             String TimeOutput2 = formatter1.format(calendar.getTime());
 
-            Time.setText(TimeOutput2);
-            Time2.setText(TimeOutput1);
+            Time.setText(TimeOutput1);
+            Time1.setText(TimeOutput2);
 
 
 
